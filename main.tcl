@@ -3,4 +3,11 @@
 frame .fr
 
 wm title . "Hello, World!"
-wm geometry . 350x250+300+300
+
+set width [winfo vrootwidth .]
+set height [winfo vrootheight .]
+
+set x [expr { ( [winfo vrootwidth  .] - $width  ) / 2 }]
+set y [expr { ( [winfo vrootheight .] - $height ) / 2 }]
+
+wm geometry . ${width}x${height}+${x}+${y}
